@@ -1,5 +1,3 @@
-import React from "react";
-
 const Content = () => {
   const compTest = () => {
     const text = "is working";
