@@ -1,8 +1,6 @@
 // snippetz
 // rafce -> functional comp, imports react
 // rce -> export default class react
-
-import "./App.css";
 import Header from "./Header";
 import Content from "./Content";
 import Footer from "./Footer";
