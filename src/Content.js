@@ -11,7 +11,8 @@ const Content = () => {
   let handleClick = (e) => {
     // let handleClickBool = true;
     e.target.innerText = currentData;
-    console.log(`name is: ${name},setName is: ${setName}`);
+    // console.log(`name is: ${name},setName is: ${setName}`);
+    setName("Darz again");
   };
   return (
     <main>
