@@ -7,6 +7,8 @@ import { useState } from "react";
 
 const Content = () => {
   const [name, setName] = useState("Darz");
+  const [count, setCount] = useState(0);
+
   const compTest = () => {
     const text = "is working";
     return text;
@@ -20,11 +22,20 @@ const Content = () => {
     setName("Darz again");
   };
 
+  const countState = () => {
+    setCount(count + 1);
+    // console.log(count);
+    setCount(count + 1);
+    console.log(count);
+  };
+
   return (
     <main>
       <p>Test {compTest()}</p>
       <p>Hello {name}</p>
       <button onClick={handleClick}>temp text</button>
+      <p>State Count</p>
+      <button onClick={countState}>count state</button>
     </main>
   );
 };
