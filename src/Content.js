@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaTrashAlt } from "react-icons/fa";
 
 // useState accepts an initial state and returns two values:
 
@@ -6,36 +7,37 @@ import { useState } from "react";
 //     A function that updates the state.
 
 const Content = () => {
-  const [name, setName] = useState("Darz");
-  const [count, setCount] = useState(0);
-
-  const compTest = () => {
-    const text = "is working";
-    return text;
-  };
-  const currentData = "text changed";
-
-  let handleClick = (e) => {
-    // let handleClickBool = true;
-    e.target.innerText = currentData;
-    // console.log(`name is: ${name},setName is: ${setName}`);
-    setName("Darz again");
-  };
-
-  const countState = () => {
-    setCount(count + 1);
-    // console.log(count);
-    setCount(count + 1);
-    console.log(count);
-  };
+  const [items, setItems] = useState([
+    {
+      id: 1,
+      checked: false,
+      item: "Item 1",
+    },
+    {
+      id: 2,
+      checked: false,
+      item: "Item 2",
+    },
+    {
+      id: 3,
+      checked: false,
+      item: "Item 3",
+    },
+  ]);
 
   return (
     <main>
-      <p>Test {compTest()}</p>
-      <p>Hello {name}</p>
-      <button onClick={handleClick}>temp text</button>
-      <p>State Count</p>
-      <button onClick={countState}>count state</button>
+      <ul>
+        {items.map((item) => {
+          return (
+            <li className="item" key={item.id}>
+              <input type="checkbox" checked={item.checked} />
+              <label>{item.item}</label>
+              <FaTrashAlt role="button" tabIndex="0" />
+            </li>
+          );
+        })}
+      </ul>
     </main>
   );
 };
