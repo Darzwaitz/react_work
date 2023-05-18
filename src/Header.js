@@ -1,9 +1,14 @@
-const Header = () => {
+// destructured 'props' object -> props.title {title}
+const Header = ({ title }) => {
   return (
     <header>
-      <h1>Shopping list</h1>
+      <h1>{title} list</h1>
     </header>
   );
+};
+
+Header.defaultProps = {
+  title: "Default title",
 };
 
 export default Header;
