@@ -8,7 +8,7 @@ import { useState } from "react";
 import AddItem from "./AddItem";
 
 function App() {
-  const [items, setItems] = useState([
+  let [items, setItems] = useState([
     {
       id: 1,
       checked: false,
@@ -25,6 +25,10 @@ function App() {
       item: "Item 3",
     },
   ]);
+
+  [items, setItems] = useState(
+    JSON.parse(localStorage.getItem("shoppinglist"))
+  );
 
   const [newItem, setNewItem] = useState("");
 
