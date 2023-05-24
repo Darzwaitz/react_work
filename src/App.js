@@ -2,6 +2,7 @@
 // rafce -> functional comp, imports react
 // rce -> export default class react
 import Header from "./Header";
+import SearchItem from "./SearchItem";
 import Content from "./Content";
 import Footer from "./Footer";
 import { useState } from "react";
@@ -13,6 +14,7 @@ function App() {
   );
 
   const [newItem, setNewItem] = useState("");
+  const [search, setSearch] = useState("");
 
   const setAndSaveItems = (newItems) => {
     setItems(newItems);
@@ -50,6 +52,7 @@ function App() {
   return (
     <div className="App">
       <Header title="Groceries" />
+      <SearchItem search={search} setSearch={setSearch} />
       <AddItem
         newItem={newItem}
         setNewItem={setNewItem}
