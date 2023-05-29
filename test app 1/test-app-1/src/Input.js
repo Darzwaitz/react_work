@@ -1,4 +1,4 @@
-const Input = ({ colorValue, setColorValue }) => {
+const Input = ({ colorValue, setColorValue, setHexValue }) => {
   return (
     <form
       onSubmit={(e) => {
@@ -12,7 +12,10 @@ const Input = ({ colorValue, setColorValue }) => {
         placeholder="Add Colour name"
         required
         value={colorValue}
-        onChange={(e) => setColorValue(e.target.value)}
+        onChange={(e) => {
+          setColorValue(e.target.value);
+          setHexValue(e.target.value);
+        }}
       />
     </form>
   );
