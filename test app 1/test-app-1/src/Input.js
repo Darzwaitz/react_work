@@ -1,6 +1,12 @@
 import colorNames from "colornames";
 
-const Input = ({ colorValue, setColorValue, setHexValue }) => {
+const Input = ({
+  colorValue,
+  setColorValue,
+  setHexValue,
+  isDarkText,
+  setIsDarkText,
+}) => {
   return (
     <form
       onSubmit={(e) => {
@@ -19,6 +25,7 @@ const Input = ({ colorValue, setColorValue, setHexValue }) => {
           setHexValue(colorNames(e.target.value));
         }}
       />
+      <button type="button"></button>
     </form>
   );
 };
