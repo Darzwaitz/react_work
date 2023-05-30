@@ -1,3 +1,5 @@
+import colorNames from "colornames";
+
 const Input = ({ colorValue, setColorValue, setHexValue }) => {
   return (
     <form
@@ -14,7 +16,7 @@ const Input = ({ colorValue, setColorValue, setHexValue }) => {
         value={colorValue}
         onChange={(e) => {
           setColorValue(e.target.value);
-          setHexValue(e.target.value);
+          setHexValue(colorNames(e.target.value));
         }}
       />
     </form>
