@@ -25,7 +25,9 @@ const Input = ({
           setHexValue(colorNames(e.target.value));
         }}
       />
-      <button type="button"></button>
+      <button type="button" onClick={() => setIsDarkText(!isDarkText)}>
+        Toggle text colour
+      </button>
     </form>
   );
 };
