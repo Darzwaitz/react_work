@@ -12,7 +12,7 @@ function App() {
   const [searchText, setSearchText] = useState("");
   return (
     <div>
-      <Navbar />
+      <Navbar searchText={searchText} setSearchText={setSearchText} />
       <Switch>
         <Route path="/" exact>
           <Home />
