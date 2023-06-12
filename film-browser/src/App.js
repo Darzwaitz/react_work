@@ -5,13 +5,21 @@ import About from "./components/pages/About";
 import SearchView from "./components/SearchView";
 import { Switch, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { ENV_API_KEY } from "./env.vars";
 
 function App() {
-  // const [searchResults, setSearchResults] = useState([]);
-  const [searchResults] = useState([]);
+  const [searchResults, setSearchResults] = useState([]);
   const [searchText, setSearchText] = useState("");
 
-  useEffect(() => {}, [searchText]);
+  useEffect(() => {
+    fetch(
+      `https://api.themoviedb.org/3/search/movie?api_key=${ENV_API_KEY}&language=en-US&query=${searchText}&page=1&include_adult=false`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setSearchResults(data.results);
+      });
+  }, [searchText]);
 
   return (
     <div>
