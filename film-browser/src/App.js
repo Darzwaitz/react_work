@@ -12,13 +12,15 @@ function App() {
   const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/search/movie?api_key=${ENV_API_KEY}&language=en-US&query=${searchText}&page=1&include_adult=false`
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setSearchResults(data.results);
-      });
+    if (searchText) {
+      fetch(
+        `https://api.themoviedb.org/3/search/movie?api_key=${ENV_API_KEY}&language=en-US&query=${searchText}&page=1&include_adult=false`
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          setSearchResults(data.results);
+        });
+    }
   }, [searchText]);
 
   return (
