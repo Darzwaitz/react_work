@@ -6,6 +6,8 @@ import SearchView from "./components/SearchView";
 import { Switch, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { ENV_API_KEY } from "./env.vars";
+// import MovieCard from "./components/MovieCard";
+import MovieView from "./components/MovieView";
 
 function App() {
   const [searchResults, setSearchResults] = useState([]);
@@ -35,6 +37,7 @@ function App() {
         <Route path="/search">
           <SearchView keyword={searchText} searchResults={searchResults} />
         </Route>
+        <Route path="/movies/:id" component={MovieView} />
       </Switch>
     </div>
   );

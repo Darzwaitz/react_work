@@ -38,7 +38,7 @@ const Navbar = ({ searchText, setSearchText }) => {
               </Link>
             </li>
 
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link
                 className="nav-link disabled"
                 to="/"
@@ -46,6 +46,11 @@ const Navbar = ({ searchText, setSearchText }) => {
                 aria-disabled="true"
               >
                 Coming Soon
+              </Link>
+            </li> */}
+            <li className="nav-item">
+              <Link className="nav-link" to="/search" tabIndex="-1">
+                Search
               </Link>
             </li>
           </ul>
