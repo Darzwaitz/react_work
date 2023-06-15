@@ -3,11 +3,11 @@ import Navbar from "./components/navigation/Navbar";
 import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import SearchView from "./components/SearchView";
-import { Switch, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { ENV_API_KEY } from "./env.vars";
 // import MovieCard from "./components/MovieCard";
 import MovieView from "./components/MovieView";
+import { Switch, Route } from "react-router-dom";
 
 function App() {
   const [searchResults, setSearchResults] = useState([]);

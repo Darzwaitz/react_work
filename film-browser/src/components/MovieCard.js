@@ -1,3 +1,4 @@
+// NOT USED FOR NOW
 const MovieCard = ({ movie }) => {
   const posterUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
 
