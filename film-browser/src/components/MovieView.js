@@ -30,7 +30,30 @@ const MovieView = () => {
       return <Hero text={"Loading..."} />;
     }
     if (movieDetails) {
-      return <Hero text={movieDetails.original_title} />;
+      const posterPath = `https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`;
+      const backdropUrl = `https://image.tmdb.org/t/p/originals${movieDetails.poster_path}`;
+
+      return (
+        <main>
+          <Hero text={movieDetails.original_title} backdrop={backdropUrl} />
+
+          <div className="container my-5">
+            <div className="row">
+              <div className="col-md-3">
+                <img
+                  src={posterPath}
+                  alt={movieDetails.original_title}
+                  className="img-fluid shadow rounded"
+                />
+              </div>
+              <div className="col-md-9">
+                <h2>{movieDetails.original_title}</h2>
+                <p className="lead">{movieDetails.overview}</p>
+              </div>
+            </div>
+          </div>
+        </main>
+      );
     }
   }
 
